@@ -1,0 +1,36 @@
+   0.1s  browser        Chromium 158.0.8127.36, headless
+   0.3s  console        [Knock] Initialized Knock instance
+   0.3s  console        [Knock] Authenticated with userId wayfinder-probe-q1
+   0.3s  console        [Knock] Identifying user wayfinder-probe-q1 inline
+   0.3s  http →         PUT /v1/users/wayfinder-probe-q1
+   0.3s  console        [Knock] [Feed] Initialized a feed on channel <feed-channel>
+   0.3s  console        [Knock] [Feed] Connecting to real-time service
+   0.3s  http →         POST /v1/sockets/connect
+   0.3s  http →         GET /v1/users/wayfinder-probe-q1/feeds/<feed-channel>/settings
+   0.3s  http →         GET /v1/users/wayfinder-probe-q1/feeds/<feed-channel>
+   0.6s  http ←         200 POST /v1/sockets/connect
+   0.6s  http ←         200 GET /v1/users/wayfinder-probe-q1/feeds/<feed-channel>/settings
+   0.6s  ws created     130546.11 api.knock.app/ws/v1/websocket
+   0.6s  http ←         200 GET /v1/users/wayfinder-probe-q1/feeds/<feed-channel>
+   0.6s  http ←         200 PUT /v1/users/wayfinder-probe-q1
+   0.8s  ws handshake   130546.11 101
+   0.8s  ws sent →      130546.11 feeds:<feed-channel>:wayfinder-probe-q1 phx_join {"client_1ATJEGPZ9iPjTUjAiolSW":{"archived":"exclude","mode":"compact"}}
+   0.8s  ws recv ←      130546.11 feeds:<feed-channel>:wayfinder-probe-q1 phx_reply {"status":"ok","response":{}}
+   3.3s  state          {"ids":[],"texts":[],"metadata":{"total_count":0,"__typename":"FeedMetadata","unread_count":0,"unseen_count":0},"networkStatus":"ready","hidden":false}
+   3.3s  Q4             {"prebuiltFooter":"Powered by Knock","prebuiltFooterHref":"https://knock.app?utm_source=powered-by-knock&utm_medium=referral&utm_campaign=knock-branding-feed","headlessHasFooter":false,"anyPoweredByOutsidePrebuilt":false}
+POST /v1/workflows/wayfinder-probe/trigger [secret key] -> 404
+   4.0s  trigger        M1 visible -> 404 {"code":"workflow_missing","message":"The workflow you specified was not found in this environment. Make sure you commit the workflow before trying to invoke it. See the docs: https://docs.knock.app/send-and-manage-data/environments","status":404,"type":"invalid_request_error"}
+   4.0s  hidden         document.hidden = true, visibilitychange dispatched
+  34.1s  ws closed      130546.11
+  34.6s  measure        socket closed 30.1s after hide
+  49.6s  state          while hidden: {"ids":[],"texts":[],"metadata":{"total_count":0,"__typename":"FeedMetadata","unread_count":0,"unseen_count":0},"networkStatus":"ready","hidden":true}
+  49.6s  visible        document.hidden = false, visibilitychange dispatched
+  49.6s  ws created     130546.12 api.knock.app/ws/v1/websocket
+  49.8s  ws handshake   130546.12 101
+  49.8s  ws sent →      130546.12 feeds:<feed-channel>:wayfinder-probe-q1 phx_join {"client_1ATJEGPZ9iPjTUjAiolSW":{"archived":"exclude","mode":"compact"}}
+  49.9s  ws recv ←      130546.12 feeds:<feed-channel>:wayfinder-probe-q1 phx_reply {"status":"ok","response":{}}
+  70.4s  timeout        M2 in store without reload (20s)
+  70.4s  state          after visible: {"ids":[],"texts":[],"metadata":{"total_count":0,"__typename":"FeedMetadata","unread_count":0,"unseen_count":0},"networkStatus":"ready","hidden":false}
+  70.4s  measure        feed GETs after becoming visible: 0
+  70.4s  summary        heartbeat frames suppressed: 2
+  70.4s  page log       [{"t":101,"event":"rendered"},{"t":444,"event":"feed:items.received","count":0},{"t":3856,"event":"visibilitychange","hidden":true},{"t":49421,"event":"visibilitychange","hidden":false}]

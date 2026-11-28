@@ -1,0 +1,81 @@
+{
+  "typeofWindow": "undefined",
+  "typeofWebSocket": "function",
+  "typeofDocument": "undefined"
+}
+DELETE /v1/users/wayfinder-probe-ssr-a [secret key] -> 204
+GET /v1/users/wayfinder-probe-ssr-a [secret key] -> 404
+GET /v1/users/wayfinder-probe-ssr-a [secret key] -> 200
+{
+  "variant": "A user={{id,name}} (default inline)",
+  "existedBefore": false,
+  "fetchesFromRender": [
+    "PUT /v1/users/wayfinder-probe-ssr-a body={\"name\":\"SSR probe A\"} -> 200"
+  ],
+  "existsAfter": true,
+  "nameInKnock": "SSR probe A",
+  "htmlHasBell": true,
+  "htmlHasFooter": false,
+  "htmlLength": 2909
+}
+DELETE /v1/users/wayfinder-probe-ssr-b [secret key] -> 204
+GET /v1/users/wayfinder-probe-ssr-b [secret key] -> 404
+GET /v1/users/wayfinder-probe-ssr-b [secret key] -> 200
+{
+  "variant": "B user={{id}} only",
+  "existedBefore": false,
+  "fetchesFromRender": [
+    "PUT /v1/users/wayfinder-probe-ssr-b body={} -> 200"
+  ],
+  "existsAfter": true,
+  "nameInKnock": null,
+  "htmlHasBell": true,
+  "htmlHasFooter": false,
+  "htmlLength": 2909
+}
+DELETE /v1/users/wayfinder-probe-ssr-c [secret key] -> 404
+GET /v1/users/wayfinder-probe-ssr-c [secret key] -> 404
+GET /v1/users/wayfinder-probe-ssr-c [secret key] -> 404
+{
+  "variant": "C userId=\"id\" (deprecated string prop)",
+  "existedBefore": false,
+  "fetchesFromRender": [],
+  "existsAfter": false,
+  "nameInKnock": null,
+  "htmlHasBell": true,
+  "htmlHasFooter": false,
+  "htmlLength": 2909
+}
+DELETE /v1/users/wayfinder-probe-ssr-d [secret key] -> 404
+GET /v1/users/wayfinder-probe-ssr-d [secret key] -> 404
+GET /v1/users/wayfinder-probe-ssr-d [secret key] -> 404
+{
+  "variant": "D user={{id,name}} enabled={false}",
+  "existedBefore": false,
+  "fetchesFromRender": [],
+  "existsAfter": false,
+  "nameInKnock": null,
+  "htmlHasBell": true,
+  "htmlHasFooter": false,
+  "htmlLength": 2909
+}
+DELETE /v1/users/wayfinder-probe-ssr-e [secret key] -> 404
+GET /v1/users/wayfinder-probe-ssr-e [secret key] -> 404
+GET /v1/users/wayfinder-probe-ssr-e [secret key] -> 404
+{
+  "variant": "E user={{id,name}} identificationStrategy=\"skip\"",
+  "existedBefore": false,
+  "fetchesFromRender": [],
+  "existsAfter": false,
+  "nameInKnock": null,
+  "htmlHasBell": true,
+  "htmlHasFooter": false,
+  "htmlLength": 2909
+}
+{
+  "repeatRenders": 3,
+  "putsFromNode": 3
+}
+{
+  "processExitedAfterLastRenderMs": 0
+}

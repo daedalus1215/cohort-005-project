@@ -1,0 +1,87 @@
+{
+  "knockVarNames": [
+    "KNOCK_FEED_CHANNEL_ID",
+    "KNOCK_PUBLIC_API_KEY",
+    "KNOCK_SECRET_API_KEY"
+  ]
+}
+GET /v1/messages [secret key] -> 200
+{
+  "path": "/v1/messages",
+  "keys": [
+    "items",
+    "page_info"
+  ],
+  "page_info": {
+    "after": null,
+    "before": null,
+    "page_size": 50,
+    "total_count": 0,
+    "__typename": "PageInfo"
+  }
+}
+GET /v1/users [secret key] -> 200
+{
+  "path": "/v1/users",
+  "keys": [
+    "entries",
+    "page_info"
+  ],
+  "page_info": {
+    "after": null,
+    "before": null,
+    "page_size": 50,
+    "total_count": 0,
+    "__typename": "PageInfo"
+  }
+}
+GET /v1/tenants [secret key] -> 200
+{
+  "path": "/v1/tenants",
+  "keys": [
+    "entries",
+    "page_info"
+  ],
+  "page_info": {
+    "after": null,
+    "before": null,
+    "page_size": 50,
+    "total_count": 0,
+    "__typename": "PageInfo"
+  }
+}
+GET /v1/objects/projects [secret key] -> 200
+{
+  "path": "/v1/objects/projects",
+  "keys": [
+    "entries",
+    "page_info"
+  ],
+  "page_info": {
+    "after": null,
+    "before": null,
+    "page_size": 50,
+    "total_count": 0,
+    "__typename": "PageInfo"
+  }
+}
+GET /v1/users/wayfinder-probe-none/feeds/00000000-0000-0000-0000-000000000000 [public key] -> 400
+{
+  "fakeChannelStatus": 400,
+  "body": {
+    "code": "channel_invalid",
+    "message": "The channel you supplied is invalid for this request",
+    "status": 400,
+    "type": "invalid_request_error"
+  }
+}
+GET /v1/users/wayfinder-probe-none/feeds/00000000-0000-0000-0000-000000000000/settings [public key] -> 400
+{
+  "fakeChannelSettingsStatus": 400,
+  "body": {
+    "code": "channel_invalid",
+    "message": "The channel you supplied is invalid for this request",
+    "status": 400,
+    "type": "invalid_request_error"
+  }
+}

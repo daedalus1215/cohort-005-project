@@ -1,0 +1,38 @@
+GET /v1/users [secret key] -> 200
+{
+  "responseHeaders": {
+    "access-control-allow-credentials": "true",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "authorization x-knock-user-token x-knock-environment",
+    "cache-control": "max-age=0, private, must-revalidate",
+    "content-length": "110",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sat, 28 Nov 2026 14:00:32 GMT",
+    "strict-transport-security": "max-age=31536000",
+    "vary": "accept-encoding",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "SAMEORIGIN",
+    "x-request-id": "GOw6R_VDVFZDoNkW8Thi",
+    "x-xss-protection": "1; mode=block"
+  }
+}
+POST /v1/workflows/wayfinder_probe/trigger [secret key] -> 404
+{
+  "key": "wayfinder_probe",
+  "code": "workflow_missing"
+}
+POST /v1/workflows/wayfinder-probe-1/trigger [secret key] -> 404
+{
+  "key": "wayfinder-probe-1",
+  "code": "workflow_missing"
+}
+POST /v1/workflows/wayfinderprobe/trigger [secret key] -> 404
+{
+  "key": "wayfinderprobe",
+  "code": "workflow_missing"
+}
+POST /v1/workflows/Wayfinder-Probe/trigger [secret key] -> 404
+{
+  "key": "Wayfinder-Probe",
+  "code": "workflow_missing"
+}

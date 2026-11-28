@@ -1,0 +1,12 @@
+POST /v1/workflows/wayfinder-probe/trigger [secret key] -> 404
+{
+  "text": "Q3 a node-sdk single",
+  "triggerStatus": 404,
+  "response": {
+    "code": "workflow_missing",
+    "message": "The workflow you specified was not found in this environment. Make sure you commit the workflow before trying to invoke it. See the docs: https://docs.knock.app/send-and-manage-data/environments",
+    "status": 404,
+    "type": "invalid_request_error"
+  }
+}
+BLOCKED: trigger failed, nothing to mark

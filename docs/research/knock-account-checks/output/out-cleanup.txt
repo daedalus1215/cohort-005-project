@@ -1,0 +1,109 @@
+GET /v1/users?page_size=50 [secret key] -> 200
+{
+  "allUsersInEnvironment": [
+    "wayfinder-probe-q1",
+    "wayfinder-probe-ssr-a",
+    "wayfinder-probe-ssr-b"
+  ]
+}
+GET /v1/users/wayfinder-probe-none [secret key] -> 404
+GET /v1/users/wayfinder-probe-none [secret key] -> 404
+GET /v1/users/wayfinder-probe-bare [secret key] -> 404
+GET /v1/users/wayfinder-probe-bare [secret key] -> 404
+GET /v1/users/wayfinder-probe-keycheck [secret key] -> 404
+GET /v1/users/wayfinder-probe-keycheck [secret key] -> 404
+GET /v1/users/wayfinder-probe-unused [secret key] -> 404
+GET /v1/users/wayfinder-probe-unused [secret key] -> 404
+GET /v1/users/wayfinder-probe-envcheck [secret key] -> 404
+GET /v1/users/wayfinder-probe-envcheck [secret key] -> 404
+GET /v1/users/wayfinder-probe-q1 [secret key] -> 200
+DELETE /v1/users/wayfinder-probe-q1 [secret key] -> 204
+GET /v1/users/wayfinder-probe-q1 [secret key] -> 404
+GET /v1/users/wayfinder-probe-q2 [secret key] -> 404
+GET /v1/users/wayfinder-probe-q2 [secret key] -> 404
+GET /v1/users/wayfinder-probe-q3 [secret key] -> 404
+GET /v1/users/wayfinder-probe-q3 [secret key] -> 404
+GET /v1/users/wayfinder-probe-ssr-a [secret key] -> 200
+DELETE /v1/users/wayfinder-probe-ssr-a [secret key] -> 204
+GET /v1/users/wayfinder-probe-ssr-a [secret key] -> 404
+GET /v1/users/wayfinder-probe-ssr-b [secret key] -> 200
+DELETE /v1/users/wayfinder-probe-ssr-b [secret key] -> 204
+GET /v1/users/wayfinder-probe-ssr-b [secret key] -> 404
+GET /v1/users/wayfinder-probe-ssr-c [secret key] -> 404
+GET /v1/users/wayfinder-probe-ssr-c [secret key] -> 404
+GET /v1/users/wayfinder-probe-ssr-d [secret key] -> 404
+GET /v1/users/wayfinder-probe-ssr-d [secret key] -> 404
+GET /v1/users/wayfinder-probe-ssr-e [secret key] -> 404
+GET /v1/users/wayfinder-probe-ssr-e [secret key] -> 404
+[
+  {
+    "id": "wayfinder-probe-none",
+    "existed": false,
+    "goneNow": true
+  },
+  {
+    "id": "wayfinder-probe-bare",
+    "existed": false,
+    "goneNow": true
+  },
+  {
+    "id": "wayfinder-probe-keycheck",
+    "existed": false,
+    "goneNow": true
+  },
+  {
+    "id": "wayfinder-probe-unused",
+    "existed": false,
+    "goneNow": true
+  },
+  {
+    "id": "wayfinder-probe-envcheck",
+    "existed": false,
+    "goneNow": true
+  },
+  {
+    "id": "wayfinder-probe-q1",
+    "existed": true,
+    "goneNow": true
+  },
+  {
+    "id": "wayfinder-probe-q2",
+    "existed": false,
+    "goneNow": true
+  },
+  {
+    "id": "wayfinder-probe-q3",
+    "existed": false,
+    "goneNow": true
+  },
+  {
+    "id": "wayfinder-probe-ssr-a",
+    "existed": true,
+    "goneNow": true
+  },
+  {
+    "id": "wayfinder-probe-ssr-b",
+    "existed": true,
+    "goneNow": true
+  },
+  {
+    "id": "wayfinder-probe-ssr-c",
+    "existed": false,
+    "goneNow": true
+  },
+  {
+    "id": "wayfinder-probe-ssr-d",
+    "existed": false,
+    "goneNow": true
+  },
+  {
+    "id": "wayfinder-probe-ssr-e",
+    "existed": false,
+    "goneNow": true
+  }
+]
+GET /v1/users [secret key] -> 200
+{
+  "usersLeft": [],
+  "total": 0
+}

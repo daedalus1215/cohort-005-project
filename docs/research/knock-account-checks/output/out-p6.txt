@@ -1,0 +1,75 @@
+== 1. new Knock() without a key {
+  "KNOCK_API_KEY_set": false
+}
+{
+  "threw": "KnockError",
+  "message": "The KNOCK_API_KEY environment variable is missing or empty; either provide it, or instantiate the Knock client with an apiKey option, like new Knock({ apiKey: '"
+}
+== 2. trigger a workflow missing from this environment, via the SDK
+[node sdk] POST /v1/workflows/wayfinder-probe/trigger -> 404
+{
+  "threw": "NotFoundError",
+  "status": 404,
+  "code": "workflow_missing",
+  "message": "404 The workflow you specified was not found in this environment. Make sure you commit the workflow before trying to inv"
+}
+== 3. local server answering 503, SDK defaults
+{
+  "threw": "InternalServerError",
+  "status": 503,
+  "attempts": 3,
+  "ms": 1243,
+  "gapsMs": [
+    460,
+    770
+  ],
+  "retryCounts": [
+    "0",
+    "1",
+    "2"
+  ],
+  "sameIdempotencyKeyOnEveryAttempt": true,
+  "idempotencyKeyPrefix": "stainless-node-retry-"
+}
+== 4. refused port, SDK defaults
+{
+  "threw": "APIConnectionError",
+  "ms": 1324,
+  "message": "Connection error."
+}
+== 5. local fake via baseURL: the trigger on the wire
+{
+  "sdkReturned": {
+    "workflow_run_id": "00000000-0000-0000-0000-000000000000"
+  },
+  "request": {
+    "at": 1795874906948,
+    "method": "POST",
+    "url": "/v1/workflows/wayfinder-probe/trigger",
+    "headerNames": [
+      "accept",
+      "accept-encoding",
+      "accept-language",
+      "authorization",
+      "connection",
+      "content-length",
+      "content-type",
+      "host",
+      "idempotency-key",
+      "sec-fetch-mode",
+      "user-agent",
+      "x-stainless-arch",
+      "x-stainless-lang",
+      "x-stainless-os",
+      "x-stainless-package-version",
+      "x-stainless-retry-count",
+      "x-stainless-runtime",
+      "x-stainless-runtime-version"
+    ],
+    "authScheme": "Bearer",
+    "idempotencyKeyPrefix": "stainless-node-retry-",
+    "idempotencyKey": "stainless-node-retry-52605f14-e80e-4951-98df-715de069f98f",
+    "retryCount": "0",
+    "body": "{\"recipients\":[{\"id\":\"user_42\",\"name\":\"Liam\"}],\"actor\":\"user_7\",\"data\":{\"refundRequestId\":913}}"
+  }
+}

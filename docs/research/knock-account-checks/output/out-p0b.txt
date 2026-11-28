@@ -1,0 +1,10 @@
+GET /v1/messages?page_size=20 [secret key] -> 200
+[]
+GET /v1/users?page_size=20 [secret key] -> 200
+[]
+GET /v1/whoami [secret key] -> 404
+{
+  "errors": {
+    "detail": "404 Not Found"
+  }
+}
